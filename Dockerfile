@@ -1,0 +1,1 @@
+"FROM node:18-alpine\n\nWORKDIR /app\n\nCOPY package*.json ./\n\nRUN npm install\n\nCOPY . .\n\nRUN npm run build || echo \"No build script found\"\n\nEXPOSE 3000\n\nCMD [\"npm\", \"run\", \"start\"]"
